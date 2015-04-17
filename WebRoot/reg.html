@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/reg_1.css" /> 
+<link rel="stylesheet" href="css/reg.css"/> 
+<link rel="shortcut icon" href="img/Icon.png"/> 
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/request.js"></script>
+<title>用户注册</title>
+<script type="text/javascript">
+    var opinionRequest=false;
+   	function checkInput(){
+		var name=document.getElementById("username").value;
+		var pwd=document.getElementById("userpwd").value;
+		var pwd1=document.getElementById("userpwd1").value;
+		var email=document.getElementById("email").value;
+		var question=document.getElementById("question").value;
+		var answer=document.getElementById("answer").value;
+		var code=document.getElementById("code").value;
+		if(name==null||name==""){
+			alert("请输入用户名！");
+			document.getElementById("username").focus();
+			return false;
+		}
+		if(pwd==null||pwd==""){
+			alert("请输入密码！");
+			document.getElementById("userpwd").focus();
+			return false;
+		}
+		else{
+			if(pwd.length<6||pwd.length>16){
+				alert("密码格式为6-16位！");
+				document.getElementById("userpwd").focus();
+				return false;
+			}
+		}
+		if(pwd1==null||pwd1==""){
+			alert("请输入确认密码！");
+			document.getElementById("userpwd1").focus();
+			return false;
+		}
+		if(pwd!=null&&pwd1!=""){
+			if(pwd!=pwd1){
+				alert("确认密码输入有误！");
+				document.getElementById("userpwd1").focus();
+				return false;
+			}
+		}
+        if(email==null||email==""){
+			alert("请输入邮箱！");
+			document.getElementById("email").focus();
+			return false;
+		}
+		if(!checkemail(email)){
+		    alert("邮箱格式不正确！");
+			document.getElementById("email").focus();
+			return false;
+		}
+        if(question==null||question==""){
+			alert("请输入问题！");
+			document.getElementById("question").focus();
+			return false;
+		}
+		 if(answer==null||answer==""){
+			alert("请输入答案！");
+			document.getElementById("answer").focus();
+			return false;
+		}
+       if(code==null||code==""){
+			alert("请输入验证码！");
+			document.getElementById("code").focus();
+			return false;
+		}
+		return true;
+	}
+
+    function registerUser(){
+      if(checkInput()){
+          var name=document.getElementById("username").value;
+          var code=document.getElementById("code").value;
+          var param = "action=checkName&name="+name+"&code="+code;	
+          opinionRequest=httpRequest("post","UserInfoServlet",true,callbackFunc,param);
+      }
+     
+    }
+    //响应的回调函数 
+	
+	function callbackFunc(){
+		if( opinionRequest.readyState==4 ){ 
+     	 	if( opinionRequest.status == 200 ){
+     	 	   
+         		var checkName=opinionRequest.responseXML.getElementsByTagName("checkName");
+         		
+         		var iteranceName=opinionRequest.responseXML.getElementsByTagName("iteranceUserName");
+         		var errorName=opinionRequest.responseXML.getElementsByTagName("errorName");
+         		var errorCode=opinionRequest.responseXML.getElementsByTagName("errorCode");
+         		if(typeof(checkName)!="undefined"&& checkName.length>0){   
+	         		
+	         		document.forms.regform.action="UserInfoServlet?action=register";
+	         	   
+	         		opinionRequest=false;
+	        		document.forms.regform.method="post";
+	        		document.forms.regform.submit();	
+         		}
+         		if(typeof(iteranceName)!="undefined"&& iteranceName.length>0){
+         		
+	         		alert("用户名已存在，请重新输入用户名和验证码！");
+	         		document.getElementById("username").focus();
+	         		document.getElementById("code").value="";
+	         		reload();
+	         		opinionRequest=false;
+	         		return false;
+         		}
+         		if(typeof(errorName)!="undefined"&& errorName.length>0){
+         		
+	         		alert("用户名含有非法字符，请重新输入用户名和验证码！");
+	         		document.getElementById("username").focus();
+	         		document.getElementById("code").value="";
+	         		reload();
+	         		opinionRequest=false;
+	         		return false;
+         		}
+         		if(typeof(errorCode)!="undefined"&& errorCode.length>0){
+         		
+	         		alert("验证码输入不正确，请重新输入！");
+	         		document.getElementById("code").focus();
+	         		document.getElementById("code").value="";
+	         		reload();
+	         		opinionRequest=false;
+	         		return false;
+         		}
+			}
+		}
+	}
+</script>
+</head>
+
+
+<body>
+ <div class="header">
+  </div>
+  <div class="mainbody">
+    <div class="top">
+     <div id="hd" class="clearfix">
+
+     <div class="logo">
+     <img src="img/logo_my_3.png" width="150" width="51"/>
+      </div>
+      </div>
+       <div class="info">
+        <span><a href="index.jsp" >首页</a></span>
+         <span class="spilt">|</span>
+        <span><a href="login.html" class="registerNew" title="登录"
+						 onfocus="this.blur();">登录</a>
+		 </span>
+      </div> 
+      <div style="clear:both;"></div>
+      </div>
+      <div class="reg-wrapper2">
+             <div align="center" >
+                 <p class="style1"> 欢迎注册<br></p>
+          </div>
+        <form id="regform" name="regform"  class="form-horizontal" method="post" >
+           <div class="control-group">
+		    <label class="control-label" for="username">用户名:</label>
+
+		     <div class="controls" >
+		       <input type="text" name="username" id="username"  /> <span class="maroon">*</span><span class="help-inline">长度为6~16位字符，可以由"数字/字母/下划线"等非中文字符组成</span>
+		     </div>
+		  </div>
+           <div class="control-group">
+		    <label class="control-label" for="username">设置密码:</label>
+
+		     <div class="controls" >
+		       <input type="password" name="userpwd" id="userpwd"  /> <span class="maroon">*</span><span class="help-inline">长度为6~16位字符</span>
+		     </div>
+		  </div>
+         <div class="control-group">
+		    <label class="control-label" for="username">确认密码:</label>
+
+		     <div class="controls" >
+		       <input type="password" name="userpwd1" id="userpwd1"  /> <span class="maroon">*</span><span class="help-inline">长度为6~16位字符</span>
+		     </div>
+		  </div>
+          <div class="control-group">
+		    <label class="control-label" for="username">email:</label>
+
+		     <div class="controls" >
+		       <input type="text" name="email" id="email"  /> <span class="maroon">*</span><span class="help-inline">帮助您找回密码！</span>
+		     </div>
+		  </div>
+          <div class="control-group">
+		    <label class="control-label" for="username">您的问题:</label>
+
+		     <div class="controls" >
+		       		     <select name="question"  id="question" ><option value="" >--请选择--</option><option value="我父亲的名字是?" >我父亲的名字是?</option><option value="我母亲的名字是？" >我母亲的名字是？</option><option value="我高中班主任是?" >我高中班主任是?</option><option value="我最喜欢的人是？" >我最喜欢的人是？</option><option value="谁在暗恋我？" >谁在暗恋我？</option><option value="我会一直爱着谁？" >我会一直爱着谁？</option></select> <span class="maroon">*</span><span class="help-inline">帮助您找回密码！</span>
+
+		     </div>
+		  </div> 
+                    <div class="control-group">
+		    <label class="control-label" for="username">您的答案:</label>
+
+		     <div class="controls" >
+		       <input type="text" name="answer" id="answer"  /> <span class="maroon">*</span>
+		     </div>
+		  </div> 
+           <div class="control-group">
+		    <label class="control-label" for="username">验证码:</label>
+
+		     <div class="controls" >
+		       <input type="text"   name="code" id="code" /> <span class="maroon">*</span> <a href="#" onclick="reload()"><img border=0 src="imageCode.jsp" name="checkCode" height="20px"/>(换一张)</a>
+		      
+		     </div>
+		  </div>
+		  
+
+         
+          <div class="control-group">
+             <label class="control-label" for="username"></label>
+		  	<div class="controls">
+                <button type="button" class="btn-register" onclick="registerUser()"></button>
+		  	</div>
+         </div>
+        </form>
+      
+      </div>
+      <div id="ft">Copyright©2015 3D相册 All Rights Reserved </div>
+
+  </div>
+
+</body>
+</html>

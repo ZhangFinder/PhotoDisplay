@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Blog</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="4useri Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Alice' rel='stylesheet' type='text/css'>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.easydropdown.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<link rel="stylesheet" href="css/swipebox.css">
+ <!------ Light Box ------>
+    <script src="js/jquery.swipebox.min.js"></script> 
+    <script type="text/javascript">
+		jQuery(function($) {
+			$(".swipebox").swipebox();
+		});
+	</script>
+    <!------ Eng Light Box ------>
+	<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+<style type="text/css">
+<!--
+
+input{
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #000000;
+	background-color: #ffffff;
+}
+
+-->
+</style>
+</head>
+<body>
+<!-- header -->
+	<div class="banner">
+	<div class="header">
+  	    <div class="container">
+			<div class="head-bann">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" class="img-responsive" alt="" /></a>
+				</div>
+				<div class="head-part">
+					<ul>
+						<li><a href="signin.html">signin</a></li> /
+						<li><a href="register.html">signup</a></li>
+							<div class="clearfix"> </div>
+					</ul>
+				</div>	
+					<div class="clearfix"> </div>
+			</div>
+					<!-- start h_menu4 -->
+					<div class="h_menu4">
+					<a class="toggleMenu" href="">Menu</a>
+					<ul class="nav">
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="portfolio.html" >PROJECT</a>
+						
+						</li>
+						<li><a href="products.html" >PRODUCT</a>
+							
+						</li>
+						<li class="active"><a href="blog.html">BLOG</a></li>
+						<li><a href="about.html">ABOUT</a></li>
+							<li><a href="contact.html">CONTACT</a></li>
+						</ul>
+						<script type="text/javascript" src="js/nav.js"></script>
+				</div>
+				<!-- end h_menu4 -->
+			</div>
+</div> 	
+<div class="banner-info1">	
+		<div class="banner-col">
+		</div>
+		
+			<div class="container">
+				<h2>blog</h2>
+			</div>
+		</div>
+	</div>
+<!-- header -->
+<!-- blog -->
+<div class="blog">
+		<div class="container">
+		  <section class="title-section">
+ 			<ul class="breadcrumb breadcrumb__t"><li><a href="index.html">Home</a></li><li class="active">Blog</li></ul>  
+		  </section>
+			<div class="row">
+			   <div class="col-md-8">
+				<div class="blog_top">
+				    <div class="badge"><div>1<em>First</em></div></div>
+				 	<div class="cont span_2_of_single">
+					   <h4 class="blog_title"><a href="">第一步</a></h4>
+					   <div class="blog_info">上传12张图片</div>
+					  <h5 class="m_head"><a href="#">注意：</a></h5>
+					  <p class="m_para">3D 相册共有4个面，每个面有3张图片，因此共有12张图片（<a href="#">点我查看示例</a>）。上传的图片尽量要高清，尺寸接近正方形，长宽尺寸不要相隔太大，700*700左右最佳。如果图片清晰度不够，或者尺寸不合适，生成的3D相册会出现失真情况。您可以上传后点击预览，观察3D相册效果是否符合您的要求。</p>
+    <form action="PhotoServlet?info=userUploadPhoto" method="post" enctype="multipart/form-data" name="form" onSubmit="return checkPhoto(form)">
+<table align="center" border="5" width="456">
+  <tr>
+    <td colspan="2" align="center"  >上传图片</td>
+  </tr>
+  <tr>
+    <td align="center">相&nbsp;&nbsp;片1：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">相&nbsp;&nbsp;片2：</td>
+    <td ><input name="file" type="file" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">相&nbsp;&nbsp;片3：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">相&nbsp;&nbsp;片4：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">相&nbsp;&nbsp;片5：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center" >相&nbsp;&nbsp;片6：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center" >相&nbsp;&nbsp;片7：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center" >相&nbsp;&nbsp;片8：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center" >相&nbsp;&nbsp;片9：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+      <tr>
+    <td align="center">相&nbsp;&nbsp;片10：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+      <tr>
+    <td align="center" >相&nbsp;&nbsp;片11：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+      <tr>
+    <td align="center" >相&nbsp;&nbsp;片12：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+
+  <tr>
+               <td colspan="2">        
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+               <input type="submit" name="Submit" value="上传" >
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="reset" name="Submit2" value="重置">
+           
+            </td>
+  </tr>
+</table>
+</form>
+					  <a href="single.html" class="blog_btn">预览</a>
+					</div>
+					 <div class="clearfix"></div>
+				 </div>
+				 <div class="blog_top">
+				 	<div class="badge"><div>2<em>Second</em></div></div>
+					<div class="cont span_2_of_single">
+					   <h4 class="blog_title"><a href="">第二步</a></h4>
+					   <div class="blog_info">上传网站标签图标  </div>
+					 
+					   <a href="single.html"><img src="images/baidu_icon.png" class="img-responsive" alt=""/></a>
+					  <h5 class="m_head"><a href="#">注意：</a></h5>
+					  <p class="m_para">每一个网站都有一个标签图标。如上图左边的小熊掌就是百度网站的标签图标。3D相册也可以上传自己的网站标签图标。网站图标的尺寸为12*12最佳。</p>
+                       <form action="PhotoServlet?info=userUploadPhoto" method="post" enctype="multipart/form-data" name="form" onSubmit="return checkPhoto(form)">
+<table align="center" border="5" width="456">
+  <tr>
+    <td colspan="2" align="center"  >上传图片</td>
+  </tr>
+  <tr>
+    <td align="center">网站标签图片：</td>
+    <td><input name="file" type="file" maxlength="20"></td>
+  </tr>
+
+
+  <tr>
+               <td colspan="2">        
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+               <input type="submit" name="Submit" value="上传" >
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="reset" name="Submit2" value="重置">
+           
+            </td>
+  </tr>
+</table>
+</form>
+					  <a href="single.html" class="blog_btn">预览</a>
+					</div>
+					 <div class="clearfix"></div>
+				  </div>
+                  <div class="blog_top">
+				 					 	<div class="badge"><div>3<em>Third</em></div></div>
+					<div class="cont span_2_of_single">
+					   <h4 class="blog_title"><a href="">第三步</a></h4>
+					   <div class="blog_info">网页文字
+						</a>
+					   </div>
+					   <a href="single.html"><img src="images/b3.jpg" class="img-responsive" alt=""/></a>
+					  <h5 class="m_head"><a href="#">注意：</a></h5>
+					  <p class="m_para">如上图，网页上共有三处文字，用户可以添加自己喜欢的文字。</p>
+                         <form action="PhotoServlet?info=userUploadPhoto" method="post" enctype="multipart/form-data" name="form" onSubmit="return checkPhoto(form)">
+<table align="center" border="5" width="456">
+  <tr>
+    <td colspan="2" align="center"  >上传图片</td>
+  </tr>
+  <tr>
+    <td align="center">文&nbsp;&nbsp;字1：</td>
+    <td><input name="text" type="text" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">文&nbsp;&nbsp;字2：</td>
+    <td ><input name="text" type="text" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">文&nbsp;&nbsp;字3：</td>
+    <td><input name="text" type="text" maxlength="20"></td>
+  </tr>
+  <tr>
+               <td colspan="2">        
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+               <input type="submit" name="Submit" value="确认" >
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="reset" name="Submit2" value="重置">
+           
+            </td>
+  </tr>
+</table>
+</form>
+					  <a href="single.html" class="blog_btn">预览</a>
+					</div>
+					 <div class="clearfix"></div>
+				  </div>
+                                    <div class="blog_top">
+				 					 	<div class="badge"><div>4<em>Fourth</em></div></div>
+					<div class="cont span_2_of_single">
+					   <h4 class="blog_title"><a href="">第四步</a></h4>
+					   <div class="blog_info">网页文字
+						</a>
+					   </div>
+					   <a href="single.html"><img src="images/b3.jpg" class="img-responsive" alt=""/></a>
+					  <h5 class="m_head"><a href="#">注意：</a></h5>
+					  <p class="m_para">如上图，网页上共有三处文字，用户可以添加自己喜欢的文字。</p>
+                         <form action="PhotoServlet?info=userUploadPhoto" method="post" enctype="multipart/form-data" name="form" onSubmit="return checkPhoto(form)">
+<table align="center" border="5" width="456">
+  <tr>
+    <td colspan="2" align="center"  >上传图片</td>
+  </tr>
+  <tr>
+    <td align="center">文&nbsp;&nbsp;字1：</td>
+    <td><input name="text" type="text" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">文&nbsp;&nbsp;字2：</td>
+    <td ><input name="text" type="text" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">文&nbsp;&nbsp;字3：</td>
+    <td><input name="text" type="text" maxlength="20"></td>
+  </tr>
+  <tr>
+               <td colspan="2">        
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+               <input type="submit" name="Submit" value="确认" >
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="reset" name="Submit2" value="重置">
+           
+            </td>
+  </tr>
+</table>
+</form>
+					  <a href="single.html" class="blog_btn">预览</a>
+					</div>
+					 <div class="clearfix"></div>
+				  </div>
+				  <div class="blog_bottom">
+				 	<div class="badge"><div>5<em>Fifth</em></div></div>
+					<div class="cont span_2_of_single">
+					   <h4 class="blog_title"><a href="">第五步</a></h4>
+					   <div class="blog_info">3D相册Url
+						</a>
+					   </div>
+					   <a href="single.html"><img src="images/b3.jpg" class="img-responsive" alt=""/></a>
+					  <h5 class="m_head"><a href="#">注意：</a></h5>
+					  <p class="m_para">如上图，网页上共有三处文字，用户可以添加自己喜欢的文字。</p>
+                         <form action="PhotoServlet?info=userUploadPhoto" method="post" enctype="multipart/form-data" name="form" onSubmit="return checkPhoto(form)">
+<table align="center" border="5" width="456">
+  <tr>
+    <td colspan="2" align="center"  >上传图片</td>
+  </tr>
+  <tr>
+    <td align="center">文&nbsp;&nbsp;字1：</td>
+    <td><input name="text" type="text" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">文&nbsp;&nbsp;字2：</td>
+    <td ><input name="text" type="text" maxlength="20"></td>
+  </tr>
+    <tr>
+    <td align="center">文&nbsp;&nbsp;字3：</td>
+    <td><input name="text" type="text" maxlength="20"></td>
+  </tr>
+  <tr>
+               <td colspan="2">        
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+               <input type="submit" name="Submit" value="确认" >
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="reset" name="Submit2" value="重置">
+           
+            </td>
+  </tr>
+</table>
+					  <a href="single.html" class="blog_btn">预览</a>
+					</div>
+					 <div class="clearfix"></div>
+				  </div>
+				</div>
+				<div class="col-md-4 blog_sidebar">
+				 <ul class="sidebar">
+					<h3>Categories</h3>
+		            <li><a href="#">Always free from repetition</a></li>
+		            <li><a href="#">Always free from repetition</a></li>
+		            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
+		            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
+		            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
+		            <li><a href="#">Always free from repetition</a></li>
+		          </ul>
+		          <h3 class="archive">Archive</h3>
+		          <ul class="sidebar">
+		             <li><a href="#">Feb 2013</a></li>
+		             <li><a href="">November 2013</a></li>
+		             <li><a href="#">June 2013</a></li>
+		             <li><a href="#">November 2013</a></li>
+		             <li><a href="#">Feb 2013</a></li>
+		             <li><a href="#">Jan 2014</a></li>		                 
+		          </ul>
+		       </div>
+			</div>
+			</div>
+	 	</div>
+	  </div>
+
+
+<!-- blog -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="subsc">
+							<div class="clearfix"></div>
+				</div>
+			</div>
+				<div class="footer-bottom">
+					<div class="footer-nav">
+						<ul>
+							<li><a href="index.html">home </a></li> \
+							<li><a href="portfolio.html">product </a></li> \
+							<li><a href="contact.html">contact </a></li> \
+							<li><a href="about.html">about</a></li> \
+							<li><a href="blog.html">blog</a></li>
+								<div class="clearfix"> </div>
+						</ul>
+					</div>
+						<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+				</div>
+		</div>
+	</div>
+<!-- footer -->
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+
+.header {
+	height: 20px;
+}
+
+.mainbody {
+	width: 850px;
+	margin: 0 auto;
+	padding: 30px 20px 40px;
+}
+.mainbody .top {
+	margin-bottom: 10px;
+	padding-bottom: 12px;
+}
+.form-horizontal {
+	margin-top: 30px;
+}
+.control-group label {
+	line-height: 15px;
+	float:left;
+	width:160px;
+	padding-top:5px;
+	text-align:right;
+	
+}
+.control-group {
+	height: 70px;
+	}
+.controls input {
+	height: 20px;
+}
+.controls select {
+	height: 30px;
+	width:155px;
+}
+.maroon {
+	color: #D20000;
+	padding-left: 2px;
+	font-family: "SimSun";
+}
+.help-inline{
+	font-size: 14px;
+	color:#c09853;
+	}
+.control-group .btn-register {
+	background: url(../img/13iweimob_email.png) no-repeat -487px -10px;
+	border: 0;
+	cursor: pointer;
+	display: inline-block;
+	height: 50px;
+	margin-top: 10px;
+	outline: medium none;
+	width: 372px;
+}
+.controlas a {
+	
+	border: 0;
+	cursor: pointer;
+	margin-left: 170px;
+
+}

@@ -1,0 +1,76 @@
+.reg-wrapper2 {
+
+	background: url(../img/9bdbg2.png) repeat-x;
+
+	_background: url(../img/10bdbg4.png) no-repeat;
+
+	height: 780px;
+
+	padding-top: 14px
+
+}
+.form-horizontal {
+	margin-top: 30px;
+
+}
+.control-group label {
+	line-height: 15px;
+	float:left;
+	width:160px;
+	padding-top:5px;
+	text-align:right;
+	
+}
+.control-group {
+	height: 70px;
+	}
+.controls input {
+	height: 20px;
+}
+.controls select {
+	height: 30px;
+	width:155px;
+}
+.maroon {
+	color: #D20000;
+	padding-left: 2px;
+	font-family: "SimSun";
+}
+.help-inline{
+	font-size: 14px;
+	color:#c09853;
+	}
+.control-group .btn-register {
+	background: url(../img/13iweimob_email.png) no-repeat -487px -10px;
+	border: 0;
+	cursor: pointer;
+	display: inline-block;
+	height: 50px;
+	margin-top: 10px;
+	outline: medium none;
+	width: 372px;
+}
+
+#ft {
+
+	color: #000000;
+
+	font-size: 12px;
+
+	text-align: center
+
+}
+
+#hd {
+
+	background: transparent;
+
+	float: left;
+
+	height: 61px;
+
+	margin-bottom: 23px;
+
+	width: 400px
+
+}

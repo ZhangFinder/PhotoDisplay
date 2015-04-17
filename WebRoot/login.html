@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户登录</title>
+<link rel="stylesheet" href="css/reg_1.css" /> 
+<link rel="stylesheet" href="css/reg.css" />
+<link rel="shortcut icon" href="img/Icon.png"/> 
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/request.js"></script>
+<script type="text/javascript">
+    var opinionRequest=false;
+//响应的回调函数 
+	
+	function callbackFunc(){
+		if( opinionRequest.readyState==4 ){ 
+     	 	if( opinionRequest.status == 200 ){
+     	 	   
+         		var errorNameOrPassword=opinionRequest.responseXML.getElementsByTagName("errorNameOrPassword");
+         		
+         		var existUser=opinionRequest.responseXML.getElementsByTagName("existUser");
+         		var errorName=opinionRequest.responseXML.getElementsByTagName("errorName");
+         		var errorCode=opinionRequest.responseXML.getElementsByTagName("errorCode");
+         		if(typeof(errorNameOrPassword)!="undefined"&& errorNameOrPassword.length>0){   
+	         	    alert("用户名或密码错误，请重新输入 ");
+	         	    reload();
+	         		document.getElementById("username").focus();
+	         		document.getElementById("code").value="";
+	         		opinionRequest=false;
+	         		return false;
+	         		
+         		}
+         		if(typeof(existUser)!="undefined"&& existUser.length>0){
+         		
+	         	
+	         		document.forms.loginform.action="UserInfoServlet?action=login";
+	         		opinionRequest=false;
+	        		document.forms.loginform.method="post";
+	        		document.forms.loginform.submit();	
+         		}
+         		if(typeof(errorName)!="undefined"&& errorName.length>0){
+         		
+	         		alert("用户名含有非法字符，请重新输入用户名和验证码！");
+	         		reload();
+	         		document.getElementById("username").focus();
+	         		document.getElementById("code").value="";
+	         		opinionRequest=false;
+	         		return false;
+         		}
+         		if(typeof(errorCode)!="undefined"&& errorCode.length>0){
+         		
+	         		alert("验证码输入不正确，请重新输入用户名和验证码！");
+	         		document.getElementById("code").focus();
+	         		document.getElementById("code").value="";
+	         		reload();
+	         		opinionRequest=false;
+	         		return false;
+         		}
+			}
+		}
+	}	
+    function login(){
+	 if(checkInput()){
+	      var name=document.getElementById("username").value;
+	      var userpwd=document.getElementById("userpwd").value;
+          var code=document.getElementById("code").value;
+          var param = "action=checkLogin&name="+name+"&code="+code+"&userpwd="+userpwd;	
+          opinionRequest=httpRequest("post","UserInfoServlet",true,callbackFunc,param);
+	   }	
+     }
+	function checkInput(){
+		var name = document.getElementById("username").value;
+		var pwd = document.getElementById("userpwd").value;
+		var code =document.getElementById("code").value;
+		if(name==null||name==""){
+			alert("请输入您的账号！");
+			document.getElementById("username").focus();
+			return false;
+		}
+		if(pwd==null||pwd==""){
+			alert("请输入您的密码！");
+			document.getElementById("userpwd").focus();
+			return false;
+		}
+		if(pwd!=null&&pwd!=""){
+			if(pwd.length<6||pwd.length>16){
+				alert("输入有误，密码长度为6-16位！");
+				document.getElementById("userpwd").focus();
+				return false;
+			}
+		}
+	   if(code==null||code==""){
+			alert("请输入下面的验证码！");
+			document.getElementById("code").focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+
+<body>
+<div id="doc">
+    <div id="hd" class="clearfix" style="padding-top: 72px; ">
+        <div class="logo"><a href="/" onfocus="this.blur();">
+        <img src="img/logo_my_3.png" width="150" height="51"/>
+        </a></div>
+   </div>
+   
+     
+       <div class="info_login">
+        <span><a href="index.jsp" >首页</a></span>
+         <span class="spilt">|</span>
+        <span><a href="reg.html" class="registerNew" title="登录"
+						 onfocus="this.blur();">注册</a>
+		 </span>
+      
+    
+   </div>
+   </div> 
+   <div class="info" style="margin-top: 99px; ">
+   </div>
+     <form id="loginform" name="loginform" >
+     
+      <div id="bd" class="quc-clearfix reg-wrapper-quick" align="center">
+              <div class="content" >
+               <div id="loginWrap">
+                  <div id="modLoginWrap" class="mod-qiuser-pop">
+                   <dl class="login-wrap">
+                     <dt>
+                            <span id="loginTitle"></span>
+                        </dt>
+                   </dl>
+                                           <div class="ipbox">
+                            <b class="r1"></b>
+                            <b class="r2"></b>
+                            <b class="r5"></b>
+                            <div class="con">
+                                <dd class="botborder" style="z-index:10;">
+                                    <div class="quc-clearfix login-item">
+                                        <label for="username">帐&nbsp;&nbsp;&nbsp;号：</label>
+                                        <input type="text"  name="username" id="username" class="ipt tipinput1" placeholder="请输入用户名" maxlength="20" />                                        
+                                    </div>
+                                </dd>
+                                <dd class="password">
+                               <div class="quc-clearfix login-item">
+                                        <label for="password">密&nbsp;&nbsp;&nbsp;码：</label>
+                                        <input type="password"  name="userpwd" id="userpwd" class="ipt tipinput1" placeholder="请输入您的密码" maxlength="20" />                                        
+                                    </div>
+                                </dd>
+                                 <dd class="password">
+                                    <div class="quc-clearfix login-item">
+                                        <label for="code">验证码：</label>
+                                        <input type="text"  name="code" id="code" class="" placeholder="请输入下面的验证码" maxlength="20" />                                        
+                                          <a href="#" onclick="reload()"><img id="imgcode" border=0 src="imageCode.jsp" name="checkCode" height="25px" width="100px"/>(换一张)</a>
+                                    </div>
+                                </dd>
+                               
+                            </div>
+                            
+                            <b class="r5"></b>
+                            <b class="r3"></b>
+                            <b class="r4"></b>
+                        </div>
+                       
+                        <span> <button type="button" class="btn-login" onclick="login()"></button></span>
+                  </div>
+               </div>
+            </div>
+      </div>
+     
+     </form>
+     <div id="ft">Copyright©2015 3D相册 All Rights Reserved </div>
+</body>
+</html>

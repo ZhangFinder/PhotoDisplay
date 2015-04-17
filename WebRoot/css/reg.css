@@ -1,0 +1,322 @@
+@charset "utf-8";
+/* CSS Document */
+
+.info {
+	color:#54c11a;
+	float:right;
+	}
+	
+.info .split {
+
+	padding: 0 17px;
+
+	width: 1px
+
+}
+.info .registerNew {
+
+	background: url(../img/11registerNew.png) no-repeat 86px 1px;
+
+	display: inline-block;
+
+	padding-right: 30px;
+
+	width: 90px
+
+}
+.info span {
+
+	display: inline-block;
+
+	text-align: center
+
+}
+#hd {
+
+	background: transparent;
+
+	float: left;
+
+	height: 61px;
+
+	margin-bottom: 23px;
+
+	width: 400px
+
+}
+#hd .logo {
+	float: left;
+
+	height: 61px;
+
+	margin-left: 13px;
+
+	width: 228px
+
+}
+.reg-wrapper2 {
+
+	background: url(../img/9bdbg2.png) repeat-x;
+
+	_background: url(../img/10bdbg4.png) no-repeat;
+
+	height: 780px;
+
+	padding-top: 14px
+
+}
+
+
+body {
+
+	background: url(../img/my_bg_1.jpg) no-repeat 50% 0
+
+}
+
+#ft {
+
+	color: #000000;
+
+	font-size: 12px;
+
+	text-align: center
+
+}
+a {
+
+	color: #000000;
+
+	cursor: pointer
+
+}
+
+a, a:hover {
+
+	text-decoration: none
+
+}
+
+a:hover {
+
+	color: #000000;
+
+}
+.quc-clearfix a{
+  color: #ff0000;
+}
+.info span a:hover {
+
+	color: #ffffff
+
+}
+.info_login span a:hover {
+
+	color: #ffffff
+
+}
+.style1 {
+	font-family: "华文行楷";
+	font-size: 36px;
+}
+#doc {
+
+	font: 14px "Microsoft YaHei";
+
+	margin: 0 auto;
+
+	position: relative;
+
+	width: 644px
+
+}
+.quc-clearfix, .quc-clearfix:after {
+
+	clear: both
+
+}
+.quc-clearfix:after {
+
+	content: " ";
+
+	display: block;
+
+	height: 0;
+
+	visibility: hidden
+
+}
+.reg-wrapper-quick {
+
+	
+ 
+	height: 350px;
+
+	padding-top: 14px
+
+}
+#bd .content {
+    
+	background: url(../img/5bdbgquick.png) repeat-x;
+	
+	height: 369px;
+  
+	padding: 25px 59px 0;
+    
+	width: 523px
+
+}
+.ipbox {
+
+	width: 374px
+
+}
+
+.r1, .r2 {
+
+	background: #c3c8c8;
+
+	border-left: 1px solid #d4d9da;
+
+	border-right: 1px solid #d4d9da;
+
+	display: block;
+
+	height: 1px;
+
+	margin: 0 3px;
+
+	overflow: hidden
+
+}
+
+.r2 {
+
+	background: #eee;
+
+	margin: 0 2px
+
+}
+
+.r3, .r4 {
+
+	background: #d4d5d3;
+
+	border-left: 1px solid #c3c8c8;
+
+	border-right: 1px solid #c3c8c8;
+
+	display: block;
+
+	height: 1px;
+
+	margin: 0 3px;
+
+	overflow: hidden
+
+}
+
+.r3 {
+
+	background: #fbfbfb;
+
+	margin: 0 2px
+
+}
+
+.r5 {
+
+	background: #fff;
+
+	border-left: 1px solid #c3c8c8;
+
+	border-right: 1px solid #c3c8c8;
+
+	display: block;
+
+	height: 1px;
+
+	margin: 0 1px;
+
+	overflow: hidden
+
+}
+.con {
+
+	background: #fff;
+
+	border-left: 1px solid #ced1d0;
+
+	border-right: 1px solid #ced1d0;
+
+	font: 16px "Microsoft YaHei"
+
+}
+.con .botborder {
+
+	border-bottom: 1px solid #e5e5e5
+
+}
+.con label {
+	  float:left;
+	  height:40px;
+	  margin-top:15px;
+	  margin-left:0px;
+	 
+	}
+	
+.con input {
+	 height:40px;
+	 width:200px;
+	 margin-top:7px;
+	}
+.input-bg .placeholder,.verify-code .placeholder,.login-item .placeholder{color:gray;font:14px arial,simsun;left:-6px;overflow:hidden;position:absolute;top:6px;*top:19px; }
+.placeholder{text-align:left;}
+.mod-qiuser-pop .btn-login:hover{background:url(../img/13iweimob_email.png) no-repeat -10px -76px;_background:url(../img/13iweimob_email.png) no-repeat -10px -76px;border:0;cursor:pointer;height:51px;outline:medium none;width:371px}
+.mod-qiuser-pop .btn-login {
+
+	background: url(../img/13iweimob_email.png) no-repeat -10px -10px;
+
+	_background: url(../img/13iweimob_email.png) no-repeat -10px -10px;
+   	border: 0;
+
+	cursor: pointer;
+
+	height: 50px;
+
+	outline: medium none;
+
+	width: 371px;
+	margin-top:40px;
+
+}
+.info_login {
+	color:#54c11a;
+	float:right; 
+	margin-top:80px;
+	
+	}
+	
+.info_login .split {
+
+	padding: 0 17px;
+
+	width: 1px
+
+}
+.info_login .registerNew {
+
+	background: url(../img/11registerNew.png) no-repeat 86px 1px;
+
+	display: inline-block;
+
+	padding-right: 30px;
+
+	width: 90px
+
+}
+.tipinput2{
+   width: 10px
+}
+.imgcode{
+  margin-top:80px;
+}
