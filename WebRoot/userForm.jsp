@@ -21,8 +21,7 @@
 <meta name="keywords" content="4useri Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-<link href='http://fonts.useso.com/css?family=Alice' rel='stylesheet' type='text/css'>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.easydropdown.js"></script>
 <script src="js/modernizr.custom.js"></script>
@@ -180,10 +179,10 @@ input{
 					    User user=(User) session.getAttribute("loginUser");
 					    String username=user.getUsername();
 					%>
-					   <li><a href="#" >欢迎您,<%=username %></a></li> /
+					   <li><a href="#" >欢迎您,<%=username %></a></li> |
 						<li><a href="UserInfoServlet?action=logout">注销</a></li>
 					<% } else{%>
-					    <li><a href="login.html" >登录</a></li> /
+					    <li><a href="login.html" >登录</a></li> |
 						<li><a href="reg.html">注册</a></li>
 					<%} %> 
 							<div class="clearfix"> </div>
@@ -192,18 +191,18 @@ input{
 					<div class="clearfix"> </div>
 			</div>
 					<!-- start h_menu4 -->
-					<div class="h_menu4">
+						<div class="h_menu4">
 					<a class="toggleMenu" href="">Menu</a>
 					<ul class="nav">
-						<li><a href="index.jsp">首页</a></li>
-						<li><a href="portfolio.html" >相册展示</a>
+						<li><a href="index.jsp">首&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+						<li><a href="Displayexample.jsp" >相&nbsp;&nbsp;&nbsp;&nbsp;册&nbsp;&nbsp;&nbsp;&nbsp;展&nbsp;&nbsp;&nbsp;&nbsp;示</a>
 						</li>
-						<li class="active"><a href="#">制作相册</a></li>
-						<li><a href="announce.html">声明</a>
+						<li class="active"><a href="userForm.jsp">制&nbsp;&nbsp;&nbsp;&nbsp;作&nbsp;&nbsp;&nbsp;&nbsp;相&nbsp;&nbsp;&nbsp;&nbsp;册</a></li>
+						<li ><a href="announce.jsp">声&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</a>
 						</li>
 						
-						<li><a href="about.html">关于</a></li>
-							<li><a href="contact.html">联系</a></li>
+						
+							<li><a href="contact.jsp">联&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系</a></li>
 						</ul>
 						<script type="text/javascript" src="js/nav.js"></script>
 				</div>
@@ -215,7 +214,7 @@ input{
 		</div>
 		
 			<div class="container">
-				<h2>Make your Own Photos!</h2>
+				<h2>Make your own photos!</h2>
 			</div>
 		</div>
 	</div>
@@ -434,23 +433,15 @@ input{
 				</div>
 				<div class="col-md-4 blog_sidebar">
 				 <ul class="sidebar">
-					<h3>Categories</h3>
-		            <li><a href="#">Always free from repetition</a></li>
-		            <li><a href="#">Always free from repetition</a></li>
-		            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
-		            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
-		            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
-		            <li><a href="#">Always free from repetition</a></li>
+					<h3>推荐</h3>
+		            <li><a href="#">毕业留言墙（暂未开通）</a></li>
+		            <li><a href="#">团队通讯录(暂未开通)</a></li>
+		            <li><a href="#">匿名聊天室(暂未开通)</a></li>
+		            <li><a href="#">网页礼物定做（暂未开通）</a></li>
+		            <li><a href="http://blog.sina.com.cn/u/2673932577" target="_blank" >ZhangFinder博客</a></li>
+		           
 		          </ul>
-		          <h3 class="archive">Archive</h3>
-		          <ul class="sidebar">
-		             <li><a href="#">Feb 2013</a></li>
-		             <li><a href="">November 2013</a></li>
-		             <li><a href="#">June 2013</a></li>
-		             <li><a href="#">November 2013</a></li>
-		             <li><a href="#">Feb 2013</a></li>
-		             <li><a href="#">Jan 2014</a></li>		                 
-		          </ul>
+		          
 		       </div>
 			</div>
 			</div>

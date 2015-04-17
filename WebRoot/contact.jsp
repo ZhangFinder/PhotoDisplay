@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>声明</title>
+<title>联系</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="shortcut icon" href="img/Icon.png"/> 
@@ -83,11 +83,11 @@ input{
 						<li><a href="Displayexample.jsp" >相&nbsp;&nbsp;&nbsp;&nbsp;册&nbsp;&nbsp;&nbsp;&nbsp;展&nbsp;&nbsp;&nbsp;&nbsp;示</a>
 						</li>
 						<li ><a href="userForm.jsp">制&nbsp;&nbsp;&nbsp;&nbsp;作&nbsp;&nbsp;&nbsp;&nbsp;相&nbsp;&nbsp;&nbsp;&nbsp;册</a></li>
-						<li class="active"><a href="#">声&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</a>
+						<li ><a href="announce.jsp">声&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</a>
 						</li>
 						
 						
-							<li><a href="contact.jsp">联&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系</a></li>
+							<li class="active"><a href="#">联&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系</a></li>
 						</ul>
 						<script type="text/javascript" src="js/nav.js"></script>
 				</div>
@@ -99,7 +99,7 @@ input{
 		</div>
 		
 			<div class="container">
-				<h2>announce</h2>
+				<h2>Contact</h2>
 			</div>
 		</div>
 	</div>
@@ -111,17 +111,14 @@ input{
 			<div class="row" >
 			   <div class="col-md-8" >
 <div class="blog_bottom">
-				 	<div class="badge"><div>声明<em>Announce</em></div></div>
+				 	<div class="badge"><div>联系<em>contact</em></div></div>
 					<div class="cont span_2_of_single">
 					  <h4 class="blog_title"><a href="">此功能尚未开通！</a></h4>
 					 
 					  
 					  <h5 class="m_head"><a href="#">注意：</a></h5>
-					  <p class="m_para">1.本网站无任何商业盈利行为，属Finder课余时间作品，如有任何侵权行为，请联系ZhangFinder!</p>
-                       <p class="m_para">2.请不要在本网站泄漏个人敏感信息，如因在本网站泄漏信息导致损失的，本网站概不负责！</p>
-					   <p class="m_para">3.使用本网站提供的任何功能时，请遵守国家相关法律法规！对于违反国家相关法律法规的用户(欢迎各位网友举报)，本网站将记录黑名单,并取消相应资格。</p>
-					   <p class="m_para">4.本网站诸多功能还在开发中，如有用户想一同参与本网站的开发，请联系ZhangFinder!</p>
-					   <p class="m_para">5.ZhangFinder：ZhangFinder@126.com</p>
+					  <p class="m_para">本网站无任何商业盈利行为，属Finder课余时间作品，如有任何侵权行为，请联系ZhangFinder@126.com</p>
+             
 					</div>
 					 <div class="clearfix"></div>
 				  </div>
