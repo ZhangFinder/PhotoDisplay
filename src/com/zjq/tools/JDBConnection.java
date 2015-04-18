@@ -12,7 +12,7 @@ import java.sql.Statement;
 public class JDBConnection {
 	private final String dbDriver = "com.mysql.jdbc.Driver"; // 设置SQL
 	String url = "jdbc:mysql://localhost:3306/db_photodisplay?user=root&password="
-		+ "zjq1048826985&characterEncoding=utf-8";
+		+ "zjq&characterEncoding=utf-8";
 
 	private ResultSet rs = null;
 	private Statement stmt = null;
@@ -22,7 +22,7 @@ public class JDBConnection {
 		try{
 			Class.forName(dbDriver).newInstance();//通过Java反射机制进行加载数据库驱动操作
 		}catch(Exception e){
-			System.out.println("数据库加载失败");
+		//	System.out.println("数据库加载失败");
 		}
 	} 
 	//创建数据库连接
@@ -32,8 +32,8 @@ public class JDBConnection {
 			con.setAutoCommit(true);
 			return true;
 		}catch(SQLException e){
-			System.out.println(e.getMessage());
-			System.out.println("createConnectionError");
+			//System.out.println(e.getMessage());
+		//	System.out.println("createConnectionError");
 			return false;
 		}
 	}
@@ -45,10 +45,10 @@ public class JDBConnection {
 		try{
 			 stmt=con.createStatement();
 		    int iCount =stmt.executeUpdate(sql);//执行参数SQL语句
-		    System.out.println("操作成功，所影响的记录数为："+String.valueOf(iCount));//在控制台中显示执行的结果
+		//    System.out.println("操作成功，所影响的记录数为："+String.valueOf(iCount));//在控制台中显示执行的结果
 		    return true;
 		}catch(SQLException e){
-			System.out.println(e.getMessage());
+		//	System.out.println(e.getMessage());
 			return false;
 		}
 	}
@@ -63,12 +63,12 @@ public class JDBConnection {
 			   rs =stmt.executeQuery(sql);//执行参数中的SQL语句
 			   
 		   }catch(SQLException e){
-			   System.out.println(e.getMessage());
+			  // System.out.println(e.getMessage());
 			   return null;
 		   }
 		}catch(SQLException e){
-			System.out.println(e.getMessage());
-			System.out.println("executeQueryError");
+		//	System.out.println(e.getMessage());
+			//System.out.println("executeQueryError");
 			return null;
 		}
 		return rs;//将查询的结果通过关键字return 进行查询
@@ -94,7 +94,7 @@ public class JDBConnection {
 				con.close();
 			}catch(SQLException e){
 				e.printStackTrace();
-				System.out.println("Falied to close connection ");
+			//	System.out.println("Falied to close connection ");
 			}finally{
 				con=null;
 			}

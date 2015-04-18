@@ -22,6 +22,7 @@ import com.zjq.dao.PhotoInfoDao;
 import com.zjq.model.PhotoInfo;
 import com.zjq.model.Temple;
 import com.zjq.model.User;
+import com.zjq.tools.Encrypt;
 
 public class PhotoServlet extends HttpServlet {
 	
@@ -29,12 +30,13 @@ public class PhotoServlet extends HttpServlet {
 	private final static String HTMFOLDER = "htmfolder";
 	private final static String PREVIEWFOLDER = "previewfolder";
 	private final static String ICON = "Icon";
-	private final static String HOMEURL = "http://blog.sina.com.cn/u/2673932577";
+	private final static String HOMEURL = "../index.jsp";//首页地址
     private final static String ROSEFOLDER="rosefolder";
     private final static String IMGFOLDER="img";
     private final static String SYSTEMTEXT_1="3D Photos";
     private final static String SYSTEMTEXT_2="Only for you!";
     private final static String SYSTEMTEXT_TITLE="for you";
+    private final static String GOTOHOME="去首页";
     private final int  MAXFILESIZE=3*1024*1024;
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -45,10 +47,9 @@ public class PhotoServlet extends HttpServlet {
 			return ;
 		}
 		User user = (User) request.getSession().getAttribute("loginUser");
-		
 		if(user==null){
 			//由于某种原因，用户没有登录。
-			System.out.println("weizhi: "+info);
+			//System.out.println("weizhi: "+info);
 			PrintWriter out = response.getWriter();
 			out.println("<script language='javascript'>parent.callback_5('很抱歉，您没有登录，没有权限此页面的操作，请先在右上角点击登录。登录后请先刷新本页面，然后进行操作！');</script>");
 			return ;
@@ -88,7 +89,7 @@ public class PhotoServlet extends HttpServlet {
 	public void get3DPhotos(HttpServletRequest request,
 			HttpServletResponse response, Temple temple, boolean isPreview)
 			throws ServletException, IOException {
-		System.out.println("正在生成3D相册");
+	//	System.out.println("正在生成3D相册");
 		String filePath = request.getRealPath("/template.html");
 
 		// 读取模板文件
@@ -101,8 +102,8 @@ public class PhotoServlet extends HttpServlet {
 		String templateContent=sb.toString();
 		reader.close();
 		fileinputstream.close();  
-		templateContent = templateContent.replaceAll("###descrptionZJQ###",
-				temple.getDescrptionZJQ());
+//		templateContent = templateContent.replaceAll("###descrptionZJQ###",
+//				temple.getDescrptionZJQ());
 		templateContent = templateContent.replaceAll("###shortcuticonZJQ###",
 				temple.getShortcuticonZJQ());
 		templateContent = templateContent.replaceAll("###titleContentZJQ###",
@@ -203,7 +204,7 @@ public class PhotoServlet extends HttpServlet {
 				File singleFile = files.getFile(i);// 获取上传文件的单个文件
 				String fileType = singleFile.getFileExt(); // 获取上传文件的扩展名
 
-				String type = "BMP,bmp,GIF,gif,JPG,jpg,PNG,png";
+				String type = "BMP,bmp,GIF,gif,JPG,jpg,JPEG,jpeg,PNG,png";
 				boolean place = type.contains(fileType);
 				if (place) {
 					if (!singleFile.isMissing()) {// 判断该文件是否被选择
@@ -223,7 +224,7 @@ public class PhotoServlet extends HttpServlet {
 						information = "您添加相片成功！";
 					}
 				} else {
-					System.out.println("文件类型不正确！");
+				//	System.out.println("文件类型不正确！");
 					information = "文件类型不正确！";
 					break;
 				}
@@ -292,7 +293,7 @@ public class PhotoServlet extends HttpServlet {
 				File singleFile = files.getFile(i);// 获取上传文件的单个文件
 				String fileType = singleFile.getFileExt(); // 获取上传文件的扩展名
 
-				String type = "BMP,bmp,GIF,gif,JPG,jpg,PNG,png";
+				String type = "BMP,bmp,GIF,gif,JPG,jpg,JPEG,jpeg,PNG,png";
 				boolean place = type.contains(fileType);
 				if (place) {
 					if (!singleFile.isMissing()) {// 判断该文件是否被选择
@@ -311,7 +312,7 @@ public class PhotoServlet extends HttpServlet {
 						information = "您添加图片成功！";
 					}
 				} else {
-					System.out.println("文件类型不正确！");
+				//	System.out.println("文件类型不正确！");
 					information = "文件类型不正确！";
 					break;
 				}
@@ -354,7 +355,7 @@ public class PhotoServlet extends HttpServlet {
 		String text1 = request.getParameter("imageText1");
 		String text2 = request.getParameter("imageText2");
 		String titleText=request.getParameter("titleText");
-		System.out.println(text1+":"+text2);
+		//System.out.println(text1+":"+text2);
 		if (text1 == null || text1.equals("")) {
 			text1 = SYSTEMTEXT_1;
 		} else {
@@ -413,13 +414,18 @@ public class PhotoServlet extends HttpServlet {
 		String url =request.getParameter("urltext");
 		String hasRose=request.getParameter("rose");
 		int intHasRose=hasRose.equals("y")? 1:0;
-		System.out.println("url="+url+"   "+"hasRose="+intHasRose);
+		//System.out.println("url="+url+"   "+"hasRose="+intHasRose);
+		url=url.trim();
 		PhotoInfo photoInfo = PhotoInfoDao.getInstance()
 		.getPhotoInfoByUserName(username);
         if (photoInfo == null) {
     	  sendErrorMessage(request,response,"很抱歉，您没有进行第一步操作，请先进行第一步操作！",5,false);
 	        return;
           }
+        if(!Encrypt.isValidInput(url)){
+        	 sendErrorMessage(request,response,"很抱歉，您输入的URL不合法，URL由\"数字，字母和_\"组成!",5,false);
+ 	        return;
+        }
         if(!PhotoInfoDao.getInstance().isUniqueUrl(url, username)){
         	sendErrorMessage(request,response,"添加设置失败，该URL已被他人使用，请更换URL！",4,false);
         	return;
@@ -487,135 +493,8 @@ public class PhotoServlet extends HttpServlet {
 			fileoutputstream.close();
 		}
 	}
-	// 第一次预览 生成3D相册
-//	public void firstPreview(HttpServletRequest request,
-//			HttpServletResponse response) throws ServletException, IOException {
-//		System.out.println("正在第一次预览效果...");
-//
-//		String username = ((User) request.getSession()
-//				.getAttribute("loginUser")).getUsername();
-//		PhotoInfo photoInfo = PhotoInfoDao.getInstance()
-//				.getPhotoInfoByUserName(username);
-//		if (photoInfo == null)
-//			return;
-//		String photos[] = new String[12];
-//		try {
-//			JSONObject json = new JSONObject(photoInfo.getPhotoinfo());
-//
-//			for (int i = 0; i < 12; i++) {
-//				photos[i] = FOLDER + "/" + username + "/" + String.valueOf(i)
-//						+ "." + json.getString(String.valueOf(i));
-//			}
-//		} catch (JSONException e) {
-//			e.printStackTrace();
-//			return;
-//		}
-//		Temple temple = new Temple();
-//		temple.setDescrptionZJQ("张家强Descrption");
-//		temple.setContentOneZJQ("张家强1");
-//		temple.setContentTwoZJQ("张家强2");
-//		temple.setContentThreeZJQ("张家强3");
-//		temple.setContentFourZJQ("张家强4");
-//		temple.setPhotosZJQ(photos);
-//		temple.setShortcuticonZJQ("girl_photos/icon_small.png");
-//		temple.setTitleContentZJQ("for张家强");
-//		temple.setWebSiteOneZJQ("http://blog.sina.com.cn/u/2673932577");
-//		temple.setWebSiteTwoZJQ(photoInfo.getUrlname() + ".html");
-//		temple.setHasRose(photoInfo.getHasRose()==1);
-//		get3DPhotos(request, response, temple, true);
-//
-//	}
+	
 
-	// 第二次预览生成3D相册
-//	public void secondPreview(HttpServletRequest request,
-//			HttpServletResponse response) throws ServletException, IOException {
-//		System.out.println("正在第二次预览效果...");
-//
-//		String username = ((User) request.getSession()
-//				.getAttribute("loginUser")).getUsername();
-//		PhotoInfo photoInfo = PhotoInfoDao.getInstance()
-//				.getPhotoInfoByUserName(username);
-//		if (photoInfo == null)
-//			return;
-//		String photos[] = new String[12];
-//		String iconFileType = null;
-//		try {
-//			JSONObject json = new JSONObject(photoInfo.getPhotoinfo());
-//
-//			for (int i = 0; i < 12; i++) {
-//				photos[i] = FOLDER + "/" + username + "/" + String.valueOf(i)
-//						+ "." + json.getString(String.valueOf(i));
-//			}
-//			iconFileType = json.getString("12");
-//		} catch (JSONException e) {
-//			e.printStackTrace();
-//			return;
-//		}
-//
-//		Temple temple = new Temple();
-//		temple.setDescrptionZJQ("DescrptionZJQ");
-//		temple.setContentOneZJQ("setContentOneZJQ");
-//		temple.setContentTwoZJQ("ContentTwoZJQ");
-//		temple.setContentThreeZJQ("ContentThreeZJQ");
-//		temple.setContentFourZJQ("ContentFourZJQ");
-//		temple.setPhotosZJQ(photos);
-//		temple.setShortcuticonZJQ(FOLDER + "/" + username + "/" + ICON + "."
-//				+ iconFileType);
-//		temple.setTitleContentZJQ("TitleContentZJQ");
-//		temple.setWebSiteOneZJQ(HOMEURL);
-//		temple.setWebSiteTwoZJQ(photoInfo.getUrlname() + ".html");
-//		temple.setHasRose(photoInfo.getHasRose()==1);
-//		get3DPhotos(request, response, temple, true);
-//
-//	}
-//	// 第三次预览生成3D相册
-//	public void thirdPreview(HttpServletRequest request,
-//			HttpServletResponse response,String username) throws ServletException, IOException {
-//		System.out.println("正在第三次预览效果...");
-//		PhotoInfo photoInfo = PhotoInfoDao.getInstance()
-//				.getPhotoInfoByUserName(username);
-//		if (photoInfo == null)
-//			return;
-//		String photos[] = new String[12];
-//		String iconFileType = null;
-//		String text1=null;
-//		String text2=null;
-//		String titleText=null;
-//		try {
-//			JSONObject json = new JSONObject(photoInfo.getPhotoinfo());
-//
-//			for (int i = 0; i < 12; i++) {
-//				photos[i] = FOLDER + "/" + username + "/" + String.valueOf(i)
-//						+ "." + json.getString(String.valueOf(i));
-//			}
-//			iconFileType = json.getString("12");
-//			text1=json.getString("13");
-//			text2=json.getString("14");
-//			titleText=json.getString("15");
-//			text1=new String(text1.getBytes("utf-8"),"gbk");
-//	        text2=new String(text2.getBytes("utf-8"),"gbk");
-//	        titleText=new String(titleText.getBytes("utf-8"),"GBK");
-//		} catch (JSONException e) {
-//			e.printStackTrace();
-//			return;
-//		}
-//		 
-//		Temple temple = new Temple();
-//		temple.setDescrptionZJQ("DescrptionZJQ");
-//		temple.setContentOneZJQ("setContentOneZJQ");
-//		temple.setContentTwoZJQ(text1);
-//		temple.setContentThreeZJQ(text2);
-//		temple.setContentFourZJQ("ContentFourZJQ");
-//		temple.setPhotosZJQ(photos);
-//		temple.setShortcuticonZJQ(FOLDER + "/" + username + "/" + ICON + "."
-//				+ iconFileType);
-//		temple.setTitleContentZJQ(titleText);
-//		temple.setWebSiteOneZJQ(HOMEURL);
-//		temple.setWebSiteTwoZJQ(photoInfo.getUrlname() + ".html");
-//		temple.setHasRose(photoInfo.getHasRose()==1);
-//		get3DPhotos(request, response, temple, true);
-//
-//	}
 	/*****
 	 * 系统异常
 	 * @author zjq
@@ -642,7 +521,7 @@ public class PhotoServlet extends HttpServlet {
 	 * **/
 	public void forPreview(HttpServletRequest request,
 			HttpServletResponse response,String username,int order) throws ServletException, IOException {
-		System.out.println("正在第"+order+"次预览效果...");
+	//	System.out.println("正在第"+order+"次预览效果...");
 		PhotoInfo photoInfo = PhotoInfoDao.getInstance()
 				.getPhotoInfoByUserName(username);
 		if (photoInfo == null){//不存在用户信息，但是却进了这个方法，肯定系统出了问题，出错处理
@@ -678,7 +557,7 @@ public class PhotoServlet extends HttpServlet {
 		temple.setContentOneZJQ("setContentOneZJQ");
 		temple.setContentTwoZJQ(text1);
 		temple.setContentThreeZJQ(text2);
-		temple.setContentFourZJQ("ContentFourZJQ");
+		temple.setContentFourZJQ(GOTOHOME);
 		temple.setPhotosZJQ(photos);
 		temple.setShortcuticonZJQ(FOLDER + "/" + username + "/" + ICON + "."
 				+ iconFileType);
@@ -700,53 +579,6 @@ public class PhotoServlet extends HttpServlet {
 		}
 
 	}
-//	//第四次，生成3D相册
-//	public void makePhotos(HttpServletRequest request,
-//			HttpServletResponse response,String username) throws ServletException, IOException {
-//		System.out.println("正在第四次生成相册...");
-//		PhotoInfo photoInfo = PhotoInfoDao.getInstance()
-//				.getPhotoInfoByUserName(username);
-//		if (photoInfo == null)
-//			return;
-//		String photos[] = new String[12];
-//		String iconFileType = null;
-//		String text1=null;
-//		String text2=null;
-//		String titleText=null;
-//		try {
-//			JSONObject json = new JSONObject(photoInfo.getPhotoinfo());
-//
-//			for (int i = 0; i < 12; i++) {
-//				photos[i] = FOLDER + "/" + username + "/" + String.valueOf(i)
-//						+ "." + json.getString(String.valueOf(i));
-//			}
-//			iconFileType = json.getString("12");
-//			text1=json.getString("13");
-//			text2=json.getString("14");
-//			titleText=json.getString("15");
-//			text1=new String(text1.getBytes("utf-8"),"gbk");
-//	        text2=new String(text2.getBytes("utf-8"),"gbk");
-//	        titleText=new String(titleText.getBytes("utf-8"),"GBK");
-//		} catch (JSONException e) {
-//			e.printStackTrace();
-//			return;
-//		}
-//		 
-//		Temple temple = new Temple();
-//		temple.setDescrptionZJQ("DescrptionZJQ");
-//		temple.setContentOneZJQ("setContentOneZJQ");
-//		temple.setContentTwoZJQ(text1);
-//		temple.setContentThreeZJQ(text2);
-//		temple.setContentFourZJQ("ContentFourZJQ");
-//		temple.setPhotosZJQ(photos);
-//		temple.setShortcuticonZJQ(FOLDER + "/" + username + "/" + ICON + "."
-//				+ iconFileType);
-//		temple.setTitleContentZJQ(titleText);
-//		temple.setWebSiteOneZJQ(HOMEURL);
-//		temple.setWebSiteTwoZJQ(photoInfo.getUrlname() + ".html");
-//		temple.setHasRose(photoInfo.getHasRose()==1);
-//		get3DPhotos(request, response, temple, false);
-//
-//	}
+
 
 }

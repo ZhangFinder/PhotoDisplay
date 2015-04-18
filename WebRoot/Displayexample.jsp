@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" errorPage="error.jsp"%>
  <%@ page import="com.zjq.model.User" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,8 +9,10 @@
 <link rel="shortcut icon" href="img/Icon.png"/> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="4useri Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta name="keywords" content="3D, photos, zhangfinder ,Display,example" />
+<meta name="description" content="This page is examplePage of 3D photos"/>
+<meta name="author" content="ZhangFinder"/>
+<meta http-equiv="Window-target" content="_top">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
@@ -101,16 +102,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  <ul id="flexiselDemo3">
 						<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="images/display_1.jpg" class="img-responsive" alt="" /></a>
+								<a href="rosefolder/niuniu.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank" >
+								<img src="images/display_niuniu.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
-									<h5>Sheak Reza</h5>
-									<p>CEO, Both kicu</p>
+									<h5>妞妞&nbsp;&nbsp;&nbsp; 端午</h5>
+									<p></p>
 									</div>
 									<div class="both-right">
-											<h6><a href="#">facebook</a> /<a href="#">twiter</a>
-											<a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
+											<h6><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+											<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a><a href="#"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><h6>
 									</div>
 										<div class="clearfix"></div>
 								</div>
@@ -118,16 +119,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="images/display_2.jpg" class="img-responsive" alt="" /></a>
+								<a href="htmfolder/angelababy.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank" >
+								<img src="images/display_angelababy.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
-									<h5>Sheak Reza</h5>
-									<p>CEO, Both kicu</p>
+									<h5> angelababy</h5>
+									<p></p>
 									</div>
 									<div class="both-right">
-											<h6><a href="#">facebook</a> /<a href="#">twiter</a>
-											<a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
+											<h6><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+											<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a><a href="#"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><h6>
 									</div>
 										<div class="clearfix"></div>
 								</div>
@@ -135,16 +136,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="images/display_3.jpg" class="img-responsive" alt="" /></a>
+								<a href="htmfolder/zhangjie.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank">
+								<img src="images/display_zhangjie.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
-									<h5>Sheak Reza</h5>
-									<p>CEO, Both kicu</p>
+									<h5> 张杰&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h5>
+									<p></p>
 									</div>
 									<div class="both-right">
-											<h6><a href="#">facebook</a> /<a href="#">twiter</a>
-											<a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
+											<h6><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+											<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a><a href="#"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><h6>
 									</div>
 										<div class="clearfix"></div>
 								</div>
@@ -152,18 +153,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="images/display_4.jpg" class="img-responsive" alt="" /></a>
+								<a href="htmfolder/koreagril.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank">
+								<img src="images/display_koreagirl.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
-									<h5>Sheak Reza</h5>
-									<p>CEO, Both kicu</p>
+									<h5> Korea Girl </h5>
+									<p></p>
 									</div>
 									<div class="both-right">
-										
-											<h6><a href="#">facebook</a> /<a href="#">twiter</a>
-											<a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
-										
+											<h6><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+											<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a><a href="#"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><h6>
 									</div>
 										<div class="clearfix"></div>
 								</div>
@@ -171,42 +170,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					    </li>
 						<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="images/display_5.jpg" class="img-responsive" alt="" /></a>
+								<a href="rosefolder/lovelygril.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank">
+								<img src="images/display_Littlegirl.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
-									<h5>Sheak Reza</h5>
-									<p>CEO, Both kicu</p>
+									<h5> Litte Girl </h5>
+									<p></p>
 									</div>
 									<div class="both-right">
-										
-											<h6><a href="#">facebook</a> /<a href="#">twiter</a>
-											<a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
-										
+											<h6><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+											<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a><a href="#"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><h6>
 									</div>
 										<div class="clearfix"></div>
 								</div>
 							</div>
-					    </li>
-												<li>
+							</li>
+													<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
-								<img src="images/display_6.jpg" class="img-responsive" alt="" /></a>
+								<a href="htmfolder/baymax.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank">
+								<img src="images/display_Baymax.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
-									<h5>Sheak Reza</h5>
-									<p>CEO, Both kicu</p>
+									<h5> Baymax  &nbsp;&nbsp;&nbsp;</h5>
+									<p></p>
 									</div>
 									<div class="both-right">
-										
-											<h6><a href="#">facebook</a> /<a href="#">twiter</a>
-											<a href="#">dribbled </a>/<a href="#"> linkedin</a><h6>
-										
+											<h6><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+											<a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a><a href="#"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><h6>
 									</div>
 										<div class="clearfix"></div>
 								</div>
 							</div>
-					    </li>
+							</li>
+						
 					 </ul>
 				</div>
 				 <script type="text/javascript">

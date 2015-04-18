@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" errorPage="error.jsp"%>
 <%@ page import="com.zjq.model.User" %>
  <%
     String isLogin;
@@ -18,8 +18,10 @@
 <link rel="shortcut icon" href="img/Icon.png"/> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="4useri Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta name="keywords" content="3D, photos, zhangfinder ,upload photos" />
+<meta name="description" content="This page is userPage of 3D photos"/>
+<meta name="author" content="ZhangFinder"/>
+<meta http-equiv="Window-target" content="_top"/>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 <script src="js/jquery.min.js"></script>
@@ -165,7 +167,7 @@ input{
 </style>
 </head>
 <body>
-<!-- header -->
+&quot;<!-- header -->
 	<div class="banner">
 	<div class="header">
   	    <div class="container">
@@ -223,7 +225,7 @@ input{
 <div class="blog">
 		<div class="container">
 		  <section class="title-section">
- 			<ul class="breadcrumb breadcrumb__t"><li class="active">Begin to make you own Photos!</li></ul>  
+ 			<ul class="breadcrumb breadcrumb__t"><li class="active">开始3D相册制作之旅吧！</li></ul>  
 		     <input type="hidden" name="isLogin" id="isLogin" value="<%=isLogin %>"/>
 		  </section>
 			<div class="row">
@@ -234,7 +236,7 @@ input{
 					   <h4 class="blog_title"><a href="">第一步</a></h4>
 					   <div class="blog_info">上传12张图片</div>
 					  <h5 class="m_head"><a href="#">注意：</a></h5>
-					  <p class="m_para">3D 相册共有4个面，每个面有3张图片，因此共有12张图片（<a href="#">点我查看示例</a>）。上传的图片尽量要高清，尺寸接近正方形，长宽尺寸不要相隔太大，700*700左右最佳。如果图片清晰度不够，或者尺寸不合适，生成的3D相册会出现失真情况。您可以上传后点击预览，观察3D相册效果是否符合您的要求。</p>
+					  <p class="m_para">3D 相册共有4个面，每个面有3张图片，因此共有12张图片。图片1-12按顺时针方向依次排列（<a href="htmfolder/angelababy.html" target="_blank">点我查看示例</a>），改变图片上传顺序即可改变图片在相册中显示的位置。上传的图片尽量要高清，尺寸接近正方形，长宽尺寸不要相隔太大，700*700左右最佳,图片格式为jpg,png。如果图片清晰度不够，或者尺寸不合适，生成的3D相册会出现失真情况。您可以上传后点击预览，观察3D相册效果是否符合您的要求。</p>
     <form action="PhotoServlet?info=userUploadPhoto" method="post" enctype="multipart/form-data" name="form" onSubmit="return checkPhoto()" target="hidden_frame_1">
 <table align="center" border="5" width="456">
   <tr>
@@ -315,7 +317,7 @@ input{
 					 
 					   <img src="images/baidu_icon.png" class="img-responsive" alt=""/>
 					  <h5 class="m_head"><a href="#">注意：</a></h5>
-					  <p class="m_para">每一个网站都有一个标签图标。如上图左边的小熊掌就是百度网站的标签图标。3D相册也可以上传自己的网站标签图标。网站图标的尺寸为28*28最佳。</p>
+					  <p class="m_para">每一个网站都有一个标签图标。如上图左边的小熊掌就是百度网站的标签图标。3D相册也可以上传自己的网站标签图标。网站图标的尺寸为28*28最佳，格式为png,jpg。</p>
                        <form action="PhotoServlet?info=userUploadIcon" method="post" enctype="multipart/form-data" name="form2" onSubmit="return checkIcon()" target="hidden_frame_2">
 <table align="center" border="5" width="456">
   <tr>
@@ -396,15 +398,15 @@ input{
 					   <div class="blog_info">设置URL，生成玫瑰页面
 					   </div>
 					  <h5 class="m_head"><a href="#">注意：</a></h5>
-					  <p class="m_para">如上图，您可以自定义网页URL。同时可以 指定是否生成玫瑰页面。生成玫瑰页面后（<a href="#">点我查看示例</a>），网页将在前5秒显示玫瑰，5秒后跳转到3D相册页面!</p>
+					  <p class="m_para">如上图，您可以自定义网页URL。同时可以 指定是否生成玫瑰页面。生成玫瑰页面后（<a href="rosefolder/lovelygril.html" target="_blank">点我查看示例</a>），网页将在前8秒显示玫瑰，5秒后跳转到3D相册页面!</p>
                          <form action="PhotoServlet?info=userSetting" method="post"  name="urlform" onSubmit="return checkUrl()" target="hidden_frame_4" >
-<table align="center" border="5" width="456">
+<table align="center" border="5" width="556">
   <tr>
     <td colspan="2" align="center"  >设置URL，玫瑰页面</td>
   </tr>
   <tr>
     <td align="center">&nbsp;&nbsp;URL：</td>
-    <td><input name="urltext" id="urltext" type="text" maxlength="20">.html&nbsp;&nbsp;(如 foryou.html)</td>
+    <td><input name="urltext" id="urltext" type="text" maxlength="15">.html&nbsp;&nbsp;(url由"数字、字母、_"等非中文字符构成,如 foryou.html)</td>
   </tr>
     <tr>
     <td align="center">是否添加玫瑰页面:</td>

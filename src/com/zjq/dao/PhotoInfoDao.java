@@ -105,7 +105,7 @@ public class PhotoInfoDao {
 			sql="insert into tb_photoinfo(`username`,`urlname`,`hasRose`,`photoinfo`)  values ('"+photoInfo.getUsername()
 			+"','"+photoInfo.getUrlname()+"','"+photoInfo.getHasRose()+"','"+photoInfo.getPhotoinfo()+"')";
 		}
-		 System.out.println(sql);
+		// System.out.println(sql);
 		boolean flag=connection.executeUpdate(sql);
 		connection.closeConnection();
 		return flag;

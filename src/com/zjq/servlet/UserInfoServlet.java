@@ -56,7 +56,7 @@ public class UserInfoServlet extends HttpServlet {
 		out.println( "<?xml version=\"1.0\" encoding=\"utf-8\"?>" );
 		out.println( "<userName>" );
 		String name = request.getParameter( "name" );//获取用户名
-		
+		name=name.trim();
 		if(Encrypt.isValidInput(name)){//判断用户名是否合法，防SQL注入攻击
 			String code= request.getParameter( "code" );//获取验证码
 			String codeSession =(String) request.getSession().getAttribute("rand");
@@ -96,9 +96,14 @@ public class UserInfoServlet extends HttpServlet {
 		String email = request.getParameter("email");		
 		String question=request.getParameter("question");
 		String answer=request.getParameter("answer");
-		
+		username=username.trim();
+		userpwd=userpwd.trim();
+	
+		email.replace(" ", "");//防SQL注入攻击，过滤掉空格
+		question.replace(" ", "");
+		answer.replace(" ", "");//过滤掉里面的空格
 		if(!Encrypt.isValidInput(username)){
-			response.sendRedirect("Fail.jsp");
+			response.sendRedirect("404.html");
 			return;//这里防止黑客替换数据，防SQL注入；
 		}
 		User user = new User();
@@ -114,7 +119,7 @@ public class UserInfoServlet extends HttpServlet {
 			session.setAttribute("loginUser", user);
 			response.sendRedirect("index.jsp");
 		}else{
-			response.sendRedirect("Fail.jsp");
+			response.sendRedirect("error.jsp");
 		}
 	}
 	/**
@@ -128,9 +133,10 @@ public class UserInfoServlet extends HttpServlet {
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");	//用户名
 		String userpwd = request.getParameter("userpwd");	//密码
-		
+		username=username.trim();
+		userpwd=userpwd.trim();
 		if(!Encrypt.isValidInput(username)){
-			response.sendRedirect("Fail.jsp");//防止黑客非法注入字符
+			response.sendRedirect("error.jsp");//防止黑客非法注入字符
 			return ;
 		}
 		User user = UserDao.getInstance().getUserInforByNameAndPassword(username, Encrypt.encodeMD5(userpwd));
@@ -140,7 +146,7 @@ public class UserInfoServlet extends HttpServlet {
 			session.setAttribute("loginUser", user);
 			response.sendRedirect("index.jsp");
 		}else{
-			response.sendRedirect("Fail.jsp");
+			response.sendRedirect("error.jsp");
 		}
 	}
 	/**
@@ -162,7 +168,7 @@ public class UserInfoServlet extends HttpServlet {
 		out.println( "<?xml version=\"1.0\" encoding=\"utf-8\"?>" );
 		out.println( "<userName>" );
 		String name = request.getParameter( "name" );//获取用户名
-		
+		name.trim();
 		if(Encrypt.isValidInput(name)){//判断用户名是否合法，防SQL注入攻击
 			String code= request.getParameter( "code" );//获取验证码
 			String password=request.getParameter("userpwd");
@@ -197,7 +203,7 @@ public class UserInfoServlet extends HttpServlet {
 	 * **/
 	private void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(null!=request.getSession().getAttribute("loginUser")){
-			System.out.println("用户session进行销毁");
+			//System.out.println("用户session进行销毁");
 			request.getSession().invalidate();//实行session的操作
 		}
 		request.getRequestDispatcher("index.jsp").forward(request, response);

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8" errorPage="error.jsp"%>
 <%@ page import="com.zjq.model.User" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -9,8 +9,10 @@
 <link rel="shortcut icon" href="img/Icon.png"/> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="4useri Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta name="keywords" content="3D, photos, zhangfinder ,Home" />
+<meta name="description" content="This page is HomePage of 3D photos"/>
+<meta name="author" content="ZhangFinder"/>
+<meta http-equiv="Window-target" content="_top"/>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.easydropdown.js"></script>
@@ -133,7 +135,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  <ul id="flexiselDemo3">
 						<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+								<a href="rosefolder/niuniu.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank" >
 								<img src="images/display_niuniu.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
@@ -150,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+								<a href="htmfolder/angelababy.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank" >
 								<img src="images/display_angelababy.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
@@ -167,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li>
 							<div class="team1">
-								<a href="rosefolder/zhangjie.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+								<a href="htmfolder/zhangjie.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank">
 								<img src="images/display_zhangjie.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
@@ -184,7 +186,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+								<a href="htmfolder/koreagril.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank">
 								<img src="images/display_koreagirl.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
@@ -201,7 +203,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					    </li>
 						<li>
 							<div class="team1">
-								<a href="rosefolder/luoli.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank">
+								<a href="rosefolder/lovelygril.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank">
 								<img src="images/display_Littlegirl.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">
@@ -218,7 +220,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</li>
 													<li>
 							<div class="team1">
-								<a href="#small-dialog6" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+								<a href="htmfolder/baymax.html" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim" target="_blank">
 								<img src="images/display_Baymax.jpg" class="img-responsive" alt="" /></a>
 								<div class="both">
 									<div class="both-left">

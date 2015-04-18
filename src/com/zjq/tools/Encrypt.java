@@ -28,7 +28,7 @@ public class Encrypt {
 	}
 
 	public static boolean isValidInput(String str) {
-		return str.matches("[a-z0-9A-Z_-]+");
+		return str.matches("[a-z0-9A-Z_]+");
 	}
 
 

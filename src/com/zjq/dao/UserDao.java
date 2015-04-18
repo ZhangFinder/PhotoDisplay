@@ -130,7 +130,7 @@ public class UserDao {
 	        +user.getPassword() + "' , '"
 	        +user.getEmail() +"', '" +user.getQuestion() +"' , '"
 	        +user.getAnswer() +  "' )";
-		 System.out.println(sql);
+		// System.out.println(sql);
 		boolean flag=connection.executeUpdate(sql);
 		connection.closeConnection();
 		return flag;
