@@ -182,7 +182,11 @@ public class PhotoServlet extends HttpServlet {
 			response.sendRedirect(PREVIEWFOLDER + "/"
 					+ temple.getWebSiteTwoZJQ());
 		} else {
-			response.sendRedirect(ROSEFOLDER + "/" + temple.getWebSiteTwoZJQ());
+			if(temple.isHasRose()){
+			  response.sendRedirect(ROSEFOLDER + "/" + temple.getWebSiteTwoZJQ());
+			}else{
+				response.sendRedirect(HTMFOLDER + "/" + temple.getWebSiteTwoZJQ());
+			}
 		}
 	}
 
@@ -254,7 +258,7 @@ public class PhotoServlet extends HttpServlet {
 		if (information.equals("您添加相片成功！")) {
 			sendErrorMessage(request,response,"图片上传成功",1,true);
 		} else {
-			sendErrorMessage(request,response,"图片上传失败"+information,1,false);
+			sendErrorMessage(request,response,"图片上传失败,"+information,1,false);
 		}
 
 	}

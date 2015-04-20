@@ -96,7 +96,8 @@
 		 
 		 return false;
      }
-   return true;
+     document.getElementById("msg1").innerHTML = "<font color=red>正在上传，请稍等....</font>";
+     return true;
  }
  function checkIcon(){
    if(!isLogin())
@@ -106,6 +107,7 @@
 		 alert("您没有选择标签图标文件！");
 		 return false;
      }
+     document.getElementById("msg2").innerHTML = "<font color=red>正在上传，请稍等....</font>";
    return true;
  }
  function checkUrl(){
@@ -122,6 +124,7 @@
                alert("请选择是否生成玫瑰页面！");
                return false;
             }
+             document.getElementById("msg4").innerHTML = "<font color=red>正在设置，请稍等....</font>";
          return true;
  }
  
@@ -131,6 +134,7 @@
        alert("很抱歉，您没有登录，没有权限此页面的操作，请先在右上角点击登录。登录后请先刷新本页面，然后进行操作！");
        return  false;
      }
+      
      return true;
  }
 </script>
@@ -167,7 +171,7 @@ input{
 </style>
 </head>
 <body>
-&quot;<!-- header -->
+<!-- header -->
 	<div class="banner">
 	<div class="header">
   	    <div class="container">
@@ -236,7 +240,7 @@ input{
 					   <h4 class="blog_title"><a href="">第一步</a></h4>
 					   <div class="blog_info">上传12张图片</div>
 					  <h5 class="m_head"><a href="#">注意：</a></h5>
-					  <p class="m_para">3D 相册共有4个面，每个面有3张图片，因此共有12张图片。图片1-12按顺时针方向依次排列（<a href="htmfolder/angelababy.html" target="_blank">点我查看示例</a>），改变图片上传顺序即可改变图片在相册中显示的位置。上传的图片尽量要高清，尺寸接近正方形，长宽尺寸不要相隔太大，700*700左右最佳,图片格式为jpg,png。如果图片清晰度不够，或者尺寸不合适，生成的3D相册会出现失真情况。您可以上传后点击预览，观察3D相册效果是否符合您的要求。</p>
+					  <p class="m_para">3D 相册共有4个面，每个面有3张图片，因此共有12张图片。图片1-12按顺时针方向依次排列（<a href="htmfolder/angelababy.html" target="_blank">点我查看示例</a>），改变图片上传顺序即可改变图片在相册中显示的位置。上传的图片尽量要高清，尺寸接近正方形，长宽尺寸不要相隔太大，600*800左右最佳,图片格式为jpg,png。如果图片清晰度不够，或者尺寸不合适，生成的3D相册会出现失真情况。您可以上传后点击预览，观察3D相册效果是否符合您的要求。</p>
     <form action="PhotoServlet?info=userUploadPhoto" method="post" enctype="multipart/form-data" name="form" onSubmit="return checkPhoto()" target="hidden_frame_1">
 <table align="center" border="5" width="456">
   <tr>
